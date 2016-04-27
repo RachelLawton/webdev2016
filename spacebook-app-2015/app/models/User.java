@@ -35,6 +35,10 @@ public class User extends Model
   @OneToMany
   public List<Post> posts = new ArrayList<Post>();
   
+  @OneToMany
+  public List<Comment> comment = new ArrayList<Comment>();
+  
+  
   
   public User(String firstName, String lastName, String email, String password, int age, String nationality)
   {
