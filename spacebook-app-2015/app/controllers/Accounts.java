@@ -19,8 +19,11 @@ public class Accounts extends Controller
 
   public static void logout()
   {
-    session.clear();
-    index();
+	  User user = getLoggedInUser();
+		user.checkonline = false;
+		user.save();
+	    session.clear();
+	    index();
   }
 
   public static void index()
@@ -43,10 +46,10 @@ public class Accounts extends Controller
     return user;
   }
   
-  public static void register(String firstName, String lastName, int age, String nationality, String email, String password, String password2)
+  public static void register(User user)//String firstName, String lastName, int age, String nationality, String email, String password, String password2)
   {
-    Logger.info(firstName + " " + lastName + " " + email + " " + password);
-    User user = new User(firstName, lastName, email, password, age, nationality);
+    Logger.info(user.firstName + " " + user.lastName + " " + user.email + " " + user.password);
+    //User user = new User(firstName, lastName, email, password, age, nationality);
     user.save();
     index();
   }
@@ -60,6 +63,8 @@ public class Accounts extends Controller
     {
       Logger.info("Authentication successful");
       session.put("logged_in_userid", user.id);
+      user.checkonline = true;
+  	  user.save();
       Home.index();
     }
     else
