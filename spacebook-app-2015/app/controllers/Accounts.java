@@ -46,10 +46,8 @@ public class Accounts extends Controller
     return user;
   }
   
-  public static void register(User user)//String firstName, String lastName, int age, String nationality, String email, String password, String password2)
-  {
+  public static void register(User user){
     Logger.info(user.firstName + " " + user.lastName + " " + user.email + " " + user.password);
-    //User user = new User(firstName, lastName, email, password, age, nationality);
     user.save();
     index();
   }

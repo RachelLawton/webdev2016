@@ -25,7 +25,7 @@ public class User extends Model
   public Blob   thumbnailPicture;
   public int    age;
   public String nationality;
-  public boolean checkonline ;
+  public boolean checkonline;
 
   @OneToMany(mappedBy = "sourceUser")
   public List<Friendship> friendships = new ArrayList<Friendship>();
@@ -39,6 +39,8 @@ public class User extends Model
   @OneToMany
   public List<Post> posts = new ArrayList<Post>();
   
+  //@OneToMany(mappedBy = "postid")
+  //public List<Comment> comment = new ArrayList<Comment>();
   
   
   public User(String firstName, String lastName, String email, String password, int age, String nationality)
@@ -92,6 +94,14 @@ public class User extends Model
     to.inbox.add(message);
     message.save();
   }  
+  
+  /*public void sendComment  (String body) //Long id)
+  {
+	  Comment comment = new Comment (body);//, id);
+	  comment.add(comment);
+	  comment.save();
+	  save();
+  }*/
   
 }
 
