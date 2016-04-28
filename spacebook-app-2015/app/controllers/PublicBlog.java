@@ -1,4 +1,4 @@
-/*package controllers;
+package controllers;
 
 import play.*;
 import play.mvc.*;
@@ -15,21 +15,5 @@ public class PublicBlog extends Controller
 		Logger.info("just visting the page for " + user.firstName + ' ' + user.lastName);
 		render(user);
 	}
+}
 
-public static void newComment(String title, String body, Long id)
-{
-	  User from = Accounts.getLoggedInUser();
-	  if(from != null)
-	  {
-		  User to = User.findById(id);
-		  Logger.info("comment from user " +
-		  from.firstName + ' ' + from.lastName +" to " +
-		  to.firstName +": "+
-		  comment);
-		  
-	  }
-		  
-	  }
-	  	
-	
-}*/

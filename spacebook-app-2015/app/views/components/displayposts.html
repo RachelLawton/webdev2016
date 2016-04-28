@@ -1,7 +1,7 @@
 <section class="ui stacked segment">
   <h4 class="ui inverted blue block header">Published Posts</h4>
   #{list items:user.posts.reverse(), as:'post'}
-    <h5 class="ui inverted green block header"><a href="/post">${post.title}</a></h5>
+    <h5 class="ui inverted green block header"><a href="/post/${post.id}">${post.title}</a></h5>
     <!--  <p> 
       ${post.content}:
     </p>-->

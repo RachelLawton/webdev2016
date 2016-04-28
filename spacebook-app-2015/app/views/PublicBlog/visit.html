@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Public Blog' /}
+<nav class="ui inverted menu">
+  <header class="header item"> Spacebook </header>
+  <div class="right menu">
+    <a class="item" href="/home">Home</a></li>
+  </div>
+</nav> 
+<h1 class="ui inverted teal block header" >Blog  </h1>
+<section class="ui two column grid segment">
+  <div class="row">
+    <div class="column">
+      #{include "components/displayposts.html" /} 
+    </div>
+  </div>
+</section>
