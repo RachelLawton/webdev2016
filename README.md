@@ -1,6 +1,15 @@
 # webdev2016
 
-Weekly Labs for my Web Development module.
+Spacebook assignment for web devevolpment. 
+
+Includes functionalitoes like:
+* Add User
+* Remove User
+* Edit User
+* Sign in to account
+* Leave comments
+* Message
+
 
 * JavaScript
 * HTML
